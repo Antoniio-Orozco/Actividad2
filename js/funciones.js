@@ -21,6 +21,11 @@ function Iniciar()
     $varBotonLi1 =  $('#btnListaradmin');
     $varBotonLi1.on('click',listar1);
 
+    // Promedio 
+
+    $varBotonProm =  $('#btnPromedio');
+    $varBotonProm.on  ('click',promedio);
+
 }
 
 function agregar ()
@@ -47,9 +52,8 @@ var Datos =function(){
     var apellido =document.getElementById("apellido").value;
     var carne =document.getElementById("carne").value;
     var nota1 =document.getElementById("nota1").value;
-    var nota2 =document.getElementById("nota2").value;
-    var nota3 =document.getElementById("nota3").value;
-   $('#tablaalumn').append('<tr class="child"><td>'+nombre+'</td><td>'+apellido+'</td><td>'+carne+'</td><td>'+nota1+'</td><td>'+nota2+'</td><td>'+nota3+'</td> </tr>' );   
+     
+   $('#tablaalumn').append('<tr class="child"><td>'+nombre+'</td><td>'+apellido+'</td><td>'+carne+'</td><td>'+nota1+'</td></tr>' );   
 
    $varTablaalumn1 = $('#tablaalumn')
    $varTablaalumn1.show();
@@ -89,3 +93,20 @@ var Datos1 =function(){
     $varTablaadmin.show();
 }
 
+function promedio() {
+     // you can change the values of array
+   let array = [70, 95, 52, 95,41]
+   let i = 0
+   let sum = 0
+   let len = array.length;
+   let result = 0
+    
+    // loop for calculate sum of array values
+    while (i < len) {
+        sum = sum + array[i++];
+    }
+      result = sum / len
+    // simply shows the result in alert box
+    alert("Average of ("+array+") is :  "+result);
+    alert("3 Aprobados, 2 Reprobados")
+}
